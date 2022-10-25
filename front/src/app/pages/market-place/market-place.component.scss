@@ -1,0 +1,56 @@
+.marketplace-container {
+  padding: 25px;
+
+  .section-container {
+    .separator {
+      width: 100%;
+      height: 1px;
+      background-color: lightgray;
+    }
+
+    .section-data-container {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+
+      .box {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  .text-align {
+    text-align: center;
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .subtitle {
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .action-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 20px;
+
+    .error {
+      font-size: 18px;
+      color: darkred;
+      margin-right: 20px;
+    }
+
+    .ticket-added {
+      font-size: 18px;
+      color: lightgray;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.journey-card-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid black;
+  width: 800px;
+
+  .title-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  .date-box {
+    display: flex;
+    justify-content: space-between;
+
+    .button {
+      margin-right: 15px;
+    }
+  }
+}

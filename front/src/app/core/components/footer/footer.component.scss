@@ -1,0 +1,47 @@
+@import 'src/assets/scss/global';
+
+.footer-container {
+  padding: 30px;
+  width: 100%;
+  background-color: $light_gray_background_color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 35px;
+  }
+
+  .navigation-container {
+    min-width: 500px;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 35px;
+
+    .button {
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .button:hover {
+      color: #7e7c7c;
+    }
+  }
+
+  .social-icon {
+    .icon {
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    .icon:last-child {
+      margin-right: initial;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="marketplace-container">
+  <div *ngFor="let section of data.sections; let i = index; let last = last">
+    <div class="section-container" *ngIf="section.type !== 'waiting' && !(section.mode === 'walking' && i === 0)">
+      <div class="section-data-container">
+        <div class="box">
+          <div class="title text-align">From</div>
+          <div class="subtitle text-align">{{section.from.name}}</div>
+        </div>
+        <div class="box">
+          <div class="title text-align">To</div>
+          <div class="subtitle text-align">{{section.to.name}}</div>
+        </div>
+        <div class="box" *ngIf="section.display_informations">
+          <div
+            class="title text-align">{{section.display_informations.commercial_mode}} {{section.display_informations.headsign}}</div>
+          <div class="title text-align">Duration : {{section.duration | secondFormat}} h</div>
+        </div>
+        <div class="box" *ngIf="!section.display_informations">
+          <div class="title text-align">walking</div>
+        </div>
+      </div>
+      <div class="separator" *ngIf="!last"></div>
+    </div>
+  </div>
+  <div class="action-container">
+    <div class="error" *ngIf="error">An error occured !</div>
+    <button *ngIf="!isTicketAdded" mat-raised-button color="primary" (click)="buyTicket()">Buy ticket</button>
+    <div class="ticket-added" *ngIf="isTicketAdded">Ticket added !</div>
+  </div>
+
+</div>

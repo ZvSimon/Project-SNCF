@@ -1,0 +1,3 @@
+<div class="ticket-container">
+  <app-journey-card class="journey-card" *ngFor="let ticket of tickets" [journeys]="ticket.data" [from]="ticket.from" [to]="ticket.to" [ticketId]="ticket._id" (remove)="deleteTicket($event)"></app-journey-card>
+</div>

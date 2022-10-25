@@ -1,0 +1,43 @@
+<div class="home-container">
+  <div>
+  <div class="image-container d-flex justify-center">
+    <div [formGroup]="form" class="search-card d-flex column">
+      <div class="title">Search for a destination</div>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>From</mat-label>
+        <input (keyup)="searchPlace(true)" [matAutocomplete]="autoFrom" matInput placeholder="Ex: Saint-lazare" formControlName="from">
+        <mat-autocomplete #autoFrom="matAutocomplete" [displayWith]="displayFn" (optionSelected)='selectPlace($event.option.value, true)'>
+          <mat-option *ngFor="let option of fromSearchOption" [value]="option">
+            {{option.label}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>To</mat-label>
+        <input (keyup)="searchPlace(false)" [matAutocomplete]="autoTo" matInput placeholder="Ex: Montpellier" formControlName="to">
+        <mat-autocomplete #autoTo="matAutocomplete" [displayWith]="displayFn" (optionSelected)='selectPlace($event.option.value, false)'>
+          <mat-option *ngFor="let option of toSearchOption" [value]="option">
+            {{option.label}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Departure date</mat-label>
+        <input matInput placeholder="DD/MM/YYYY" formControlName="departure" [matDatepicker]="picker" [min]="minDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <button class="full-width" mat-raised-button color="primary" (click)="searchTickets()">Search</button>
+    </div>
+  </div>
+  </div>
+
+  <div class="journey-container" *ngIf="journeys">
+    <div class="title">Journeys - {{fromSelected.label}} -> {{toSelected.label}}</div>
+    <app-journey-card class="journey" *ngFor="let journey of journeys" [journeys]="journey"></app-journey-card>
+  </div>
+</div>

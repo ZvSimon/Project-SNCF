@@ -1,0 +1,17 @@
+<div class="footer-container">
+  <div class="title">© 2022 Sncf, Inc.</div>
+
+  <div class="navigation-container">
+    <a class="button" (click)="navigateTo('home')">Home</a>
+    <a class="button" *ngIf="!isLogged" (click)="openAuthDialog()">Sign In</a>
+    <a class="button" *ngIf="isLogged"  (click)="navigateTo('profile')">Profile</a>
+    <a class="button" *ngIf="isLogged" (click)="navigateTo('ticket')">My tickets</a>
+    <a class="button" (click)="navigateTo('about')">About</a>
+  </div>
+
+  <div class="social-icon">
+    <mat-icon class="icon" svgIcon="twitter" (click)="navigateToExternalUrl('twitter.com/SNCF')"></mat-icon>
+    <mat-icon class="icon" svgIcon="facebook" (click)="navigateToExternalUrl('fr-fr.facebook.com/SNCFOFFICIEL/')"></mat-icon>
+    <mat-icon class="icon" svgIcon="instagram" (click)="navigateToExternalUrl('www.instagram.com/sncf')"></mat-icon>
+  </div>
+</div>

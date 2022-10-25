@@ -1,0 +1,18 @@
+<div class="navbar-container d-flex justify-space-between">
+  <div class="logo cursor-pointer" (click)="navigateTo('')">Sncf</div>
+  <div *ngIf="!isLogged" class="auth-button-container d-flex justify-space-between">
+    <div class="auth-button d-flex cursor-pointer" (click)="openAuthDialog(true)">Sign In</div>
+    <div class="auth-button d-flex cursor-pointer" (click)="openAuthDialog(false)">Sign Up</div>
+  </div>
+  <div *ngIf="isLogged">
+    <button class="logged-button" mat-button [matMenuTriggerFor]="menu">
+      <mat-icon class="icon">account_circle</mat-icon>
+      {{user?.firstName | titlecase}} {{user?.lastName | titlecase}}
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="navigateTo('profile')">Profile</button>
+      <button mat-menu-item (click)="navigateTo('ticket')">My tickets</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+  </div>
+</div>

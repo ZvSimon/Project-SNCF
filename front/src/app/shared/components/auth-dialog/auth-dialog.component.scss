@@ -1,0 +1,28 @@
+@import 'src/assets/scss/global';
+
+.auth-dialog {
+  .title {
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .form-container {
+    margin-top: 30px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .ask-account {
+    margin-top: 15px;
+    text-align: center;
+
+    .ask-button {
+      color: $primary_background_color;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}

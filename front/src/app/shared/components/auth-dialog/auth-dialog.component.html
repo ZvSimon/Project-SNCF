@@ -1,0 +1,38 @@
+<div class="auth-dialog">
+  <div class="title">{{isSignIn ? 'Sign in' : 'Sign Up'}}</div>
+  <div class="form-container" [formGroup]="form" (submit)="submit()">
+    <mat-form-field class="full-width" appearance="outline" *ngIf="!isSignIn">
+      <mat-label>Firstname</mat-label>
+      <input matInput placeholder="Ex: John" formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline" *ngIf="!isSignIn">
+      <mat-label>Lastname</mat-label>
+      <input matInput placeholder="Ex: Doe" formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Ex: john-doe@example.com" formControlName="mail">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Password" formControlName="password">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline" *ngIf="!isSignIn">
+      <mat-label>Confirm password</mat-label>
+      <input matInput type="password" placeholder="Confirm password" formControlName="confirmPassword">
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="error">An error occured</div>
+
+  <div>
+    <button class="full-width" mat-raised-button color="primary" [disabled]="!form.valid" (click)="submit()">{{isSignIn ? 'Sign in' : 'Sign Up'}}</button>
+    <div class="ask-account">
+      {{isSignIn ? 'Dont have an account ? ' : 'Already have an account ?'}} <span class="ask-button" (click)="updateFormField()">{{isSignIn ? 'Sign in' : 'Sign Up'}}</span>
+    </div>
+  </div>
+</div>

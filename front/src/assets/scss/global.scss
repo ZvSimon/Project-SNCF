@@ -1,0 +1,31 @@
+// COLOR STYLE
+$light_gray_background_color: #f1efef;
+$primary_background_color: #3f51b5;
+
+
+// FLEX BOX
+
+.d-flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+// OTHERS
+
+.cursor-pointer {
+  cursor: pointer;
+}

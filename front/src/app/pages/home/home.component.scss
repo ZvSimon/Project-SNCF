@@ -1,0 +1,44 @@
+@import 'src/assets/scss/global';
+
+.home-container {
+  .image-container {
+    background-image: url("../../../assets/images/dark-evening-light-trails-434415_3.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .search-card {
+    min-width: 350px;
+    min-height: 300px;
+    background-color: white;
+    border-radius: 4px;
+    border: solid 1px black;
+    padding: 25px;
+
+    .title {
+      font-weight: 600;
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .journey-container {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      font-weight: 600;
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+
+    .journey {
+      margin-bottom: 20px;
+    }
+  }
+}

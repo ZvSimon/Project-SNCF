@@ -1,0 +1,23 @@
+<div class="journey-card-container">
+  <div class="title-container" *ngIf="from && to">
+    <div class="title">{{from}} -> {{to}}</div>
+  </div>
+  <div class="date-box">
+    <div>
+      <div>Departure date :</div>
+      <div>{{journeys.departure_date_time | date:'short'}}</div>
+    </div>
+    <div>
+      <div>Arrival date :</div>
+      <div>{{journeys.arrival_date_time | date:'short'}}</div>
+    </div>
+    <div>
+      <div>Duration :</div>
+      <div>{{journeys.duration | secondFormat}} h</div>
+    </div>
+    <div>
+      <button class="button" mat-raised-button color="primary" (click)="navigateTo()">More informations</button>
+      <button *ngIf="from && to" mat-raised-button color="warn" (click)="emitDeleteTicket()">Delete</button>
+    </div>
+  </div>
+</div>

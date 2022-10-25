@@ -1,0 +1,26 @@
+.profile-container {
+  .title {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form-container {
+    background-color: #f3f1f1;
+    border: solid 1px #b6b3b3;
+    border-radius: 4px;
+    min-width: 500px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+
+    .action {
+      display: flex;
+      justify-content: end;
+    }
+  }
+}

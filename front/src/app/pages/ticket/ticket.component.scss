@@ -1,0 +1,10 @@
+.ticket-container {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .journey-card {
+    margin-bottom: 25px;
+  }
+}
